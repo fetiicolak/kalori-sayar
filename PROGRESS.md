@@ -4,7 +4,7 @@
 
 ## Mevcut aşama
 
-**Aşama 1–6 — Yerel uygulama tamamlandı; harici servis bağlantıları bekleniyor**
+**Aşama 1–6 — Uygulama ve Supabase üretim altyapısı hazır; Cloudflare/AI bağlantıları bekleniyor**
 
 Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu yerel olarak hazırlandı.
 
@@ -42,6 +42,10 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 - GitHub Actions kalite iş akışı eklendi.
 - TypeScript, lint, birim/bileşen testleri ve üretim derlemesi başarıyla çalıştırıldı.
 - Cloudflare Worker paketi `wrangler --dry-run` ile başarıyla doğrulandı.
+- Ücretsiz Supabase projesi `kalori-sayar` oluşturuldu ve ilk migration uygulandı.
+- Canlı Supabase ortamında 8 uygulama tablosu, 32 CRUD RLS politikası ve 8 RLS-etkin tablo doğrulandı.
+- Yerel istemci yalnızca Supabase yayımlanabilir anahtarıyla bağlandı; anonim REST isteğinin kullanıcı satırı göremediği doğrulandı.
+- Gerçek Supabase yapılandırmasıyla TypeScript, lint, 10 test ve üretim PWA derlemesi yeniden başarıyla çalıştırıldı.
 
 ## Doğrulanan kritik kabuller
 
@@ -53,13 +57,13 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 ## Açık kararlar
 
 - Kaynak kod lisansı henüz seçilmedi. Lisans dosyası eklenene kadar kamuya açık depo, üçüncü kişilere otomatik yeniden kullanım hakkı vermez.
-- Supabase, Cloudflare, Gemini ve USDA hesap/anahtarları henüz bağlanmadı.
-- RLS pgTAP testi, bağlı Supabase ortamı olmadığı için henüz gerçek PostgreSQL üzerinde çalıştırılmadı.
+- Cloudflare, Gemini ve USDA hesap/anahtarları henüz bağlanmadı.
+- RLS tablo/politika kurulumu ve anonim erişim canlı ortamda doğrulandı; iki kimlikli pgTAP testi henüz canlı PostgreSQL üzerinde çalıştırılmadı.
 - Canlı dağıtım onayı henüz verilmedi.
 
 ## Sıradaki adımlar
 
-1. Supabase projesini oluştur, migration'ı uygula ve iki kullanıcıyla RLS testini çalıştır.
+1. Canlı Supabase üzerinde işlemsel iki-kullanıcılı RLS testini çalıştır.
 2. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
 3. Cloudflare projesini bağla ve ön izleme dağıtımında uçtan uca testleri yap.
 4. Kaynak kod lisansını seç.
@@ -67,5 +71,6 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 
 ## Sorunlar
 
-- Harici hesaplar bağlanana kadar gerçek auth, senkronizasyon, AI ve veri kaynağı uçtan uca testleri çalıştırılamaz.
+- Parola gerektiren test kullanıcıları oluşturulana kadar gerçek kayıt/giriş ve iki gerçek hesaplı uçtan uca test çalıştırılamaz.
+- Cloudflare ile Gemini/USDA bağlanana kadar AI ve harici veri kaynağı uçtan uca testleri çalıştırılamaz.
 - Codex'in in-app tarayıcısı yerel geliştirme sunucusuna ağ izolasyonu nedeniyle erişemedi; görsel QA servis bağlantısından sonra gerçek ön izleme URL'sinde tekrarlanacaktır.

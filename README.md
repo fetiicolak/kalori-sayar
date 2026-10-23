@@ -2,7 +2,7 @@
 
 Fotoğraf, metin, ses veya barkodla tüketilen yiyecekleri kaydetmeyi; günlük kalori ve makroları hesaplamayı; hedef, su ve kilo değişimini takip etmeyi sağlayan mobil öncelikli, çok kullanıcılı PWA.
 
-> Uygulama kodu yerel olarak derlenip test edilmektedir. Supabase, Cloudflare ve Gemini hesap bağlantıları tamamlanmadan gerçek kullanıcı kaydı ve AI özellikleri çalışmaz.
+> Uygulama kodu derlenip test edildi ve Supabase üretim altyapısı bağlandı. Cloudflare ve Gemini bağlantıları tamamlanana kadar AI özellikleri çalışmaz.
 
 ## Özellikler
 
