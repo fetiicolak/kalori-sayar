@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Kalori Sayar">
+  <rect width="128" height="128" rx="30" fill="#13261f"/>
+  <path d="M35 31c17 0 31 8 38 21 6-8 15-13 27-14-1 14-8 24-21 29v15c0 13-9 23-22 23S35 95 35 82V31Z" fill="#f7f6f1"/>
+  <path d="M48 49v34M61 49v34" stroke="#ec6a43" stroke-width="8" stroke-linecap="round"/>
+  <path d="M89 50c-8 3-13 9-15 18" stroke="#7ecb8b" stroke-width="8" stroke-linecap="round"/>
+</svg>

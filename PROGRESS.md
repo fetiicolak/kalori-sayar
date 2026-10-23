@@ -4,9 +4,9 @@
 
 ## Mevcut aşama
 
-**Aşama 0 — Planlama ve proje hazırlığı**
+**Aşama 1–6 — Yerel uygulama tamamlandı; harici servis bağlantıları bekleniyor**
 
-Uygulama kodlaması henüz başlamadı.
+Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu yerel olarak hazırlandı.
 
 ## Tamamlananlar
 
@@ -24,25 +24,48 @@ Uygulama kodlaması henüz başlamadı.
 - Başlangıç belgeleri `main` dalına pushlandı.
 - `PLAN.md` onaylandı.
 - Proje çalışma kuralları `AGENTS.md` içinde oluşturuldu.
+- React 19, Vite 8 ve TypeScript 6 PWA iskeleti oluşturuldu.
+- Supabase e-posta/parola auth arayüzü hazırlandı.
+- Kullanıcıya özel profil, hedef, öğün, onay, su ve kilo tabloları oluşturuldu.
+- Bütün kişisel tablolarda CRUD bazlı RLS politikaları yazıldı.
+- İki kullanıcıyla negatif erişim senaryolarını kapsayan pgTAP testi eklendi.
+- Öğün ve öğün kalemlerini atomik güncelleyen `save_food_entry` fonksiyonu yazıldı.
+- Günlük kalori/makro özeti, hedef düzenleme, öğün ekleme/düzenleme/silme hazırlandı.
+- Manuel, metin, fotoğraf, ses, USDA araması ve barkod giriş akışları eklendi.
+- Gemini öncesi sürümlü fotoğraf onayı ve görsel küçültme uygulandı.
+- Open Food Facts ve USDA kaynak kimliği/atıf ayrımı korundu.
+- IndexedDB önbelleği ve kullanıcıya özel çevrimdışı işlem kuyruğu eklendi.
+- JSON/CSV dışa aktarma hazırlandı.
+- Su/kilo takibi, kilo eğrisi ve enerji ihtiyacı hesaplaması eklendi.
+- Cloudflare Worker JWT doğrulaması, CORS, giriş sınırları ve yumuşak hız limitiyle hazırlandı.
+- PWA manifesti, service worker ve güncelleme bildirimi oluşturuldu.
+- GitHub Actions kalite iş akışı eklendi.
+- TypeScript, lint, birim/bileşen testleri ve üretim derlemesi başarıyla çalıştırıldı.
+- Cloudflare Worker paketi `wrangler --dry-run` ile başarıyla doğrulandı.
 
 ## Doğrulanan kritik kabuller
 
 - İlk güvenli temel aşaması en az iki bağımsız kullanıcı hesabıyla test edilecek.
 - Kullanıcı izolasyonu yalnızca istemci filtrelerine değil veritabanı RLS politikalarına dayanacak.
 - Ücretli servisler, canlı dağıtım ve yıkıcı veri işlemleri ayrıca onay gerektirecek.
+- Kodlama işlerinin ürün sahibi adına Codex tarafından yürütülmesi için geliştirme onayı verildi.
 
 ## Açık kararlar
 
 - Kaynak kod lisansı henüz seçilmedi. Lisans dosyası eklenene kadar kamuya açık depo, üçüncü kişilere otomatik yeniden kullanım hakkı vermez.
-- Supabase, Cloudflare ve Gemini hesapları henüz kurulmadı/bağlanmadı.
-- Geliştirmeye başlama onayı henüz verilmedi.
+- Supabase, Cloudflare, Gemini ve USDA hesap/anahtarları henüz bağlanmadı.
+- RLS pgTAP testi, bağlı Supabase ortamı olmadığı için henüz gerçek PostgreSQL üzerinde çalıştırılmadı.
+- Canlı dağıtım onayı henüz verilmedi.
 
 ## Sıradaki adımlar
 
-1. Kaynak kod lisansını ürün sahibiyle seç.
-2. Supabase, Cloudflare ve Gemini hesap/secret kurulum planını uygula.
-3. Ürün sahibinden Aşama 1 geliştirme onayı al.
+1. Supabase projesini oluştur, migration'ı uygula ve iki kullanıcıyla RLS testini çalıştır.
+2. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
+3. Cloudflare projesini bağla ve ön izleme dağıtımında uçtan uca testleri yap.
+4. Kaynak kod lisansını seç.
+5. Ürün sahibinden canlı dağıtım onayı al.
 
 ## Sorunlar
 
-Şu anda bilinen engelleyici bir sorun yok.
+- Harici hesaplar bağlanana kadar gerçek auth, senkronizasyon, AI ve veri kaynağı uçtan uca testleri çalıştırılamaz.
+- Codex'in in-app tarayıcısı yerel geliştirme sunucusuna ağ izolasyonu nedeniyle erişemedi; görsel QA servis bağlantısından sonra gerçek ön izleme URL'sinde tekrarlanacaktır.

@@ -1,6 +1,6 @@
 # Kalori Sayar — Proje Planı
 
-> Durum: **AŞAMA 0 — PLAN ONAYLANDI, PROJE HAZIRLIĞI**
+> Durum: **GELİŞTİRME — YEREL UYGULAMA HAZIR, SERVİS BAĞLANTILARI BEKLİYOR**
 >
 > Son güncelleme: 23 Ekim 2026
 >

@@ -33,3 +33,5 @@ Thumbs.db
 # Local temporary files
 *.tmp
 *.temp
+.chrome-qa*/
+qa-*.png
