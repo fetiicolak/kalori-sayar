@@ -4,7 +4,7 @@
 
 ## Mevcut aşama
 
-**Aşama 1–6 — Uygulama ve Supabase üretim altyapısı hazır; Cloudflare/AI bağlantıları bekleniyor**
+**Aşama 1–6 — Uygulama, Supabase ve Cloudflare dağıtım bağlantısı hazır; AI anahtarları ve canlı yayın bekleniyor**
 
 Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu yerel olarak hazırlandı.
 
@@ -47,6 +47,7 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 - Yerel istemci yalnızca Supabase yayımlanabilir anahtarıyla bağlandı; anonim REST isteğinin kullanıcı satırı göremediği doğrulandı.
 - Canlı Supabase üzerinde işlemsel iki-kullanıcılı pgTAP RLS testi 12/12 geçti ve `ROLLBACK` ile test verileri geri alındı.
 - Gerçek Supabase yapılandırmasıyla TypeScript, lint, 10 test ve üretim PWA derlemesi yeniden başarıyla çalıştırıldı.
+- Cloudflare hesabı Wrangler OAuth ile bağlandı ve üretim paketi bağlı hesapta final `--dry-run` doğrulamasından geçti.
 
 ## Doğrulanan kritik kabuller
 
@@ -58,16 +59,16 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 ## Açık kararlar
 
 - Kaynak kod lisansı henüz seçilmedi. Lisans dosyası eklenene kadar kamuya açık depo, üçüncü kişilere otomatik yeniden kullanım hakkı vermez.
-- Cloudflare, Gemini ve USDA hesap/anahtarları henüz bağlanmadı.
+- Gemini ve USDA anahtarları henüz bağlanmadı.
 - RLS tablo/politika kurulumu, anonim erişim ve iki kimlikli pgTAP izolasyon testi canlı ortamda doğrulandı.
 - Canlı dağıtım onayı henüz verilmedi.
 
 ## Sıradaki adımlar
 
-1. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
-2. Cloudflare projesini bağla ve ön izleme dağıtımında uçtan uca testleri yap.
-3. Kaynak kod lisansını seç.
-4. Ürün sahibinden canlı dağıtım onayı al.
+1. Ürün sahibinden canlı Cloudflare dağıtım onayı al ve ilk Workers adresini oluştur.
+2. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
+3. Canlı Workers adresinde uçtan uca ve görsel testleri yap.
+4. Kaynak kod lisansını seç.
 
 ## Sorunlar
 
