@@ -4,7 +4,10 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
+const base = process.env.GITHUB_ACTIONS === 'true' ? '/kalori-sayar/' : '/'
+
 export default defineConfig({
+  base,
   build: { chunkSizeWarningLimit: 600 },
   plugins: [
     react(),
@@ -18,16 +21,16 @@ export default defineConfig({
         theme_color: '#13261f',
         background_color: '#f7f6f1',
         display: 'standalone',
-        start_url: '/',
+        start_url: base,
         lang: 'tr',
         categories: ['health', 'fitness', 'lifestyle'],
         icons: [
-          { src: '/logo.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
-          { src: '/logo-maskable.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'maskable' }
+          { src: `${base}logo.svg`, sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
+          { src: `${base}logo-maskable.svg`, sizes: 'any', type: 'image/svg+xml', purpose: 'maskable' }
         ]
       },
       workbox: {
-        navigateFallback: '/index.html',
+        navigateFallback: `${base}index.html`,
         globPatterns: ['**/*.{js,css,html,svg,woff2}']
       }
     })
