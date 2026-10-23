@@ -70,6 +70,8 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 
 ## Sıradaki adımlar
 
+Arayüz iyileştirmeleri: mobil sabit hızlı işlem çubuğu, geçmiş tarihten bugüne dönüş, yükleme hatasında tekrar deneme, belirgin klavye odağı ve telefon güvenli alan boşlukları eklendi. Görsel yön ürün sahibinin yarınki tarifine göre geliştirilecek. Önerilen sonraki özellikler: favori öğünler, tekrar ye, haftalık özet ve öğün bazlı gruplanmış liste.
+
 1. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
 2. Kaynak kod lisansını seç.
 

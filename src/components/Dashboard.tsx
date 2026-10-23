@@ -142,6 +142,7 @@ export function Dashboard() {
             <p className="muted">Küçük kayıtlar, daha net bir gün.</p>
           </div>
           <div className="date-controls">
+            {dateKey !== toDateKey(new Date()) && <button className="button ghost small" onClick={() => setDateKey(toDateKey(new Date()))}>Bugüne dön</button>}
             <button className="icon-button" onClick={() => setDateKey((current) => shiftDateKey(current, -1))} aria-label="Önceki gün">←</button>
             <input type="date" value={dateKey} onChange={(event) => setDateKey(event.target.value)} aria-label="Takip tarihi" />
             <button className="icon-button" onClick={() => setDateKey((current) => shiftDateKey(current, 1))} aria-label="Sonraki gün">→</button>
@@ -170,13 +171,15 @@ export function Dashboard() {
           </div>
 
           {entriesQuery.isLoading && <div className="empty-state"><div className="spinner" /><p>Kayıtlar yükleniyor…</p></div>}
-          {entriesQuery.isError && <div className="notice error" role="alert">Kayıtlar yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.</div>}
+          {entriesQuery.isError && <div className="notice error" role="alert">Kayıtlar yüklenemedi. <button className="text-button" onClick={() => void entriesQuery.refetch()}>Tekrar dene</button></div>}
           {!entriesQuery.isLoading && !entries.length && <div className="empty-state"><span className="empty-icon">◌</span><h3>İlk öğününü ekle</h3><p>Manuel gir, metni ayrıştır veya fotoğrafla tahmin al.</p><button className="button primary" onClick={() => setShowAdd(true)}>Öğün ekle</button></div>}
           <div className="entries-list">{entries.map((entry) => <EntryCard key={entry.id} entry={entry} onEdit={(selected) => { setEditingEntry(selected); setShowAdd(true) }} onDelete={(id) => void removeEntry(id)} />)}</div>
         </section>
 
         <TrackingPanel userId={userId} dateKey={dateKey} onUseEnergyGoal={useEnergyGoal} />
       </main>
+
+      <nav className="mobile-quickbar" aria-label="Hızlı işlemler"><button className="button ghost" onClick={() => setDateKey(toDateKey(new Date()))}>Bugün</button><button className="button primary" onClick={() => setShowAdd(true)}>+ Öğün ekle</button><button className="button ghost" onClick={() => setShowGoal(true)}>Hedefler</button></nav>
 
       <footer className="app-footer"><span>Besin değerleri bilgilendirme amaçlıdır.</span><a href="https://fdc.nal.usda.gov/" target="_blank" rel="noreferrer">USDA FoodData Central</a></footer>
       {showAdd && <AddMealDialog userId={userId} dateKey={dateKey} initialEntry={editingEntry} onClose={() => { setShowAdd(false); setEditingEntry(null) }} onSave={addEntry} />}
