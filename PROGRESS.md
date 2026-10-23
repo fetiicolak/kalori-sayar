@@ -20,6 +20,8 @@ Uygulama kodlaması henüz başlamadı.
 - USDA ve Open Food Facts kaynaklarının lisans sınırları plana işlendi.
 - Cloudflare Workers Static Assets yaklaşımı tercih edildi.
 - GitHub hesabı `fetiicolak` olarak doğrulandı.
+- Herkese açık `fetiicolak/kalori-sayar` GitHub deposu oluşturuldu.
+- Başlangıç belgeleri `main` dalına pushlandı.
 - `PLAN.md` onaylandı.
 - Proje çalışma kuralları `AGENTS.md` içinde oluşturuldu.
 
@@ -37,10 +39,9 @@ Uygulama kodlaması henüz başlamadı.
 
 ## Sıradaki adımlar
 
-1. Herkese açık `fetiicolak/kalori-sayar` GitHub deposunu oluştur ve başlangıç belgelerini pushla.
-2. Kaynak kod lisansını ürün sahibiyle seç.
-3. Supabase, Cloudflare ve Gemini hesap/secret kurulum planını uygula.
-4. Ürün sahibinden Aşama 1 geliştirme onayı al.
+1. Kaynak kod lisansını ürün sahibiyle seç.
+2. Supabase, Cloudflare ve Gemini hesap/secret kurulum planını uygula.
+3. Ürün sahibinden Aşama 1 geliştirme onayı al.
 
 ## Sorunlar
 
