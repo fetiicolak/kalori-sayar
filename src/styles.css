@@ -64,7 +64,7 @@ label small { color: var(--ink-soft); font-weight: 400; }
 .notice.warning { color: #72510e; background: #fff4d9; border: 1px solid #ead28e; }
 
 .auth-shell { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(420px, 0.75fr); background: var(--forest); }
-.auth-brand { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 7vw, 7rem); color: white; }
+.auth-brand { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 7vw, 7rem); color: white; background: var(--forest); }
 .auth-brand::before { content: ''; position: absolute; width: 450px; height: 450px; left: -130px; bottom: -220px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,255,255,.025), 0 0 0 140px rgba(255,255,255,.02); }
 .auth-brand::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 82% 14%, rgba(114,185,131,.18), transparent 32%), linear-gradient(140deg, transparent 45%, rgba(255,255,255,.035)); }
 .auth-brand > * { position: relative; z-index: 1; }
