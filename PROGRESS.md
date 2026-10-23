@@ -4,7 +4,7 @@
 
 ## Mevcut aşama
 
-**Aşama 1–6 — Uygulama, Supabase ve Cloudflare dağıtım bağlantısı hazır; AI anahtarları ve canlı yayın bekleniyor**
+**Aşama 1–6 — Uygulama canlı; AI anahtarları ve son hesap ayarları bekleniyor**
 
 Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu yerel olarak hazırlandı.
 
@@ -48,6 +48,9 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 - Canlı Supabase üzerinde işlemsel iki-kullanıcılı pgTAP RLS testi 12/12 geçti ve `ROLLBACK` ile test verileri geri alındı.
 - Gerçek Supabase yapılandırmasıyla TypeScript, lint, 10 test ve üretim PWA derlemesi yeniden başarıyla çalıştırıldı.
 - Cloudflare hesabı Wrangler OAuth ile bağlandı ve üretim paketi bağlı hesapta final `--dry-run` doğrulamasından geçti.
+- Cloudflare Worker ve Static Assets canlıya dağıtıldı; Supabase bağlantı değerleri şifreli Worker sırları olarak eklendi.
+- Yerel ağdaki genel `workers.dev` erişim sorunu nedeniyle erişilebilir ön yüz GitHub Pages üzerinde HTTPS ile yayımlandı.
+- GitHub Pages otomatik dağıtımı, masaüstü ve 390×844 mobil görünüm gerçek tarayıcıda doğrulandı; bulunan logo ve mobil kontrast hataları giderildi.
 
 ## Doğrulanan kritik kabuller
 
@@ -61,17 +64,17 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 - Kaynak kod lisansı henüz seçilmedi. Lisans dosyası eklenene kadar kamuya açık depo, üçüncü kişilere otomatik yeniden kullanım hakkı vermez.
 - Gemini ve USDA anahtarları henüz bağlanmadı.
 - RLS tablo/politika kurulumu, anonim erişim ve iki kimlikli pgTAP izolasyon testi canlı ortamda doğrulandı.
-- Canlı dağıtım onayı henüz verilmedi.
+- Canlı dağıtım onayı verildi ve üretim dağıtımı tamamlandı.
 
 ## Sıradaki adımlar
 
-1. Ürün sahibinden canlı Cloudflare dağıtım onayı al ve ilk Workers adresini oluştur.
+1. Supabase Auth site/yönlendirme adresini GitHub Pages üretim adresine ayarla.
 2. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
-3. Canlı Workers adresinde uçtan uca ve görsel testleri yap.
+3. Kullanıcının oluşturacağı parola korumalı gerçek hesapla kayıt/giriş ve öğün akışını uçtan uca doğrula.
 4. Kaynak kod lisansını seç.
 
 ## Sorunlar
 
 - Parola gerektiren test kullanıcıları oluşturulana kadar gerçek kayıt/giriş ve iki gerçek hesaplı uçtan uca test çalıştırılamaz.
-- Cloudflare ile Gemini/USDA bağlanana kadar AI ve harici veri kaynağı uçtan uca testleri çalıştırılamaz.
-- Codex'in in-app tarayıcısı yerel geliştirme sunucusuna ağ izolasyonu nedeniyle erişemedi; görsel QA servis bağlantısından sonra gerçek ön izleme URL'sinde tekrarlanacaktır.
+- Gemini/USDA anahtarları bağlanana kadar AI ve USDA veri kaynağı uçtan uca testleri çalıştırılamaz.
+- Yerel ağ `workers.dev` ve `pages.dev` alanlarına doğrudan erişimi kesiyor; herkese açık arayüz bu nedenle erişilebilen GitHub Pages adresinde tutuluyor.

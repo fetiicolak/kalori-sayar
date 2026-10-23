@@ -2,7 +2,9 @@
 
 Fotoğraf, metin, ses veya barkodla tüketilen yiyecekleri kaydetmeyi; günlük kalori ve makroları hesaplamayı; hedef, su ve kilo değişimini takip etmeyi sağlayan mobil öncelikli, çok kullanıcılı PWA.
 
-> Uygulama kodu derlenip test edildi ve Supabase üretim altyapısı bağlandı. Cloudflare ve Gemini bağlantıları tamamlanana kadar AI özellikleri çalışmaz.
+**Canlı uygulama:** https://fetiicolak.github.io/kalori-sayar/
+
+> Uygulama kodu derlenip test edildi; Supabase ve Cloudflare üretim altyapısı bağlandı. Gemini ve USDA anahtarları eklenene kadar AI analizi ve USDA araması çalışmaz; manuel takip ve Supabase hesap/veri akışları hazırdır.
 
 ## Özellikler
 
@@ -108,6 +110,8 @@ npx wrangler secret put USDA_API_KEY
 ```
 
 `wrangler.jsonc` içindeki `ALLOWED_ORIGINS` üretim alan adı belli olduğunda güncellenmelidir. Canlı dağıtım ürün sahibinin ayrıca vereceği onaydan sonra yapılır.
+
+Canlı Worker adresi `https://kalori-sayar.kalori-sayar.workers.dev` şeklindedir. Bazı ağlar `workers.dev` alanını engelleyebildiği için kullanıcı arayüzü ayrıca GitHub Pages üzerinde yayımlanır.
 
 ## Komutlar
 
