@@ -55,7 +55,7 @@ export function AuthScreen() {
   return (
     <main className="auth-shell">
       <section className="auth-brand" aria-label="Kalori Sayar tanıtımı">
-        <img src="/logo.svg" alt="" width="56" height="56" />
+        <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="" width="56" height="56" />
         <p className="eyebrow">DAHA NET BESLENME TAKİBİ</p>
         <h1>Ne yediğini gör.<br />Hedefini sadeleştir.</h1>
         <p className="auth-lead">

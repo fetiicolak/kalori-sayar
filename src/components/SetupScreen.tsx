@@ -2,7 +2,7 @@ export function SetupScreen() {
   return (
     <main className="setup-shell">
       <section className="setup-card">
-        <img src="/logo.svg" alt="" width="64" height="64" />
+        <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="" width="64" height="64" />
         <p className="eyebrow">KURULUM GEREKİYOR</p>
         <h1>Uygulama hazır, bağlantı bekliyor.</h1>
         <p>

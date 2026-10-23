@@ -126,7 +126,7 @@ export function Dashboard() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <a className="brand" href="/" aria-label="Kalori Sayar ana sayfa"><img src="/logo.svg" alt="" /><span>Kalori Sayar</span></a>
+        <a className="brand" href={import.meta.env.BASE_URL} aria-label="Kalori Sayar ana sayfa"><img src={`${import.meta.env.BASE_URL}logo.svg`} alt="" /><span>Kalori Sayar</span></a>
         <nav aria-label="Hesap işlemleri">
           <span className={`network-pill ${online ? '' : 'offline'}`}>{online ? (pendingCount ? `${pendingCount} bekliyor` : 'Eşitlendi') : 'Çevrimdışı'}</span>
           <button className="button ghost small" onClick={() => void signOut()}>Çıkış</button>

@@ -7,7 +7,7 @@ const AuthScreen = lazy(() => import('./components/AuthScreen').then((module) =>
 const Dashboard = lazy(() => import('./components/Dashboard').then((module) => ({ default: module.Dashboard })))
 
 function LoadingScreen() {
-  return <main className="loading-screen"><img src="/logo.svg" alt="" /><div className="spinner" /><span>Güvenli oturum hazırlanıyor…</span></main>
+  return <main className="loading-screen"><img src={`${import.meta.env.BASE_URL}logo.svg`} alt="" /><div className="spinner" /><span>Güvenli oturum hazırlanıyor…</span></main>
 }
 
 function AuthenticatedApp() {
