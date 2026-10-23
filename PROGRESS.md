@@ -4,7 +4,7 @@
 
 ## Mevcut aşama
 
-**Aşama 1–6 — Uygulama canlı; AI anahtarları ve son hesap ayarları bekleniyor**
+**Aşama 1–6 — Uygulama canlı; AI anahtarları ve gerçek kullanıcı kabul testi bekleniyor**
 
 Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu yerel olarak hazırlandı.
 
@@ -65,13 +65,13 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 - Gemini ve USDA anahtarları henüz bağlanmadı.
 - RLS tablo/politika kurulumu, anonim erişim ve iki kimlikli pgTAP izolasyon testi canlı ortamda doğrulandı.
 - Canlı dağıtım onayı verildi ve üretim dağıtımı tamamlandı.
+- Supabase Auth site URL'si ve izin verilen yönlendirme URL'si GitHub Pages üretim adresine bağlandı.
 
 ## Sıradaki adımlar
 
-1. Supabase Auth site/yönlendirme adresini GitHub Pages üretim adresine ayarla.
-2. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
-3. Kullanıcının oluşturacağı parola korumalı gerçek hesapla kayıt/giriş ve öğün akışını uçtan uca doğrula.
-4. Kaynak kod lisansını seç.
+1. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
+2. Kullanıcının oluşturacağı parola korumalı gerçek hesapla kayıt/giriş ve öğün akışını uçtan uca doğrula.
+3. Kaynak kod lisansını seç.
 
 ## Sorunlar
 
