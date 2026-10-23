@@ -45,6 +45,7 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 - Ücretsiz Supabase projesi `kalori-sayar` oluşturuldu ve ilk migration uygulandı.
 - Canlı Supabase ortamında 8 uygulama tablosu, 32 CRUD RLS politikası ve 8 RLS-etkin tablo doğrulandı.
 - Yerel istemci yalnızca Supabase yayımlanabilir anahtarıyla bağlandı; anonim REST isteğinin kullanıcı satırı göremediği doğrulandı.
+- Canlı Supabase üzerinde işlemsel iki-kullanıcılı pgTAP RLS testi 12/12 geçti ve `ROLLBACK` ile test verileri geri alındı.
 - Gerçek Supabase yapılandırmasıyla TypeScript, lint, 10 test ve üretim PWA derlemesi yeniden başarıyla çalıştırıldı.
 
 ## Doğrulanan kritik kabuller
@@ -58,16 +59,15 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 
 - Kaynak kod lisansı henüz seçilmedi. Lisans dosyası eklenene kadar kamuya açık depo, üçüncü kişilere otomatik yeniden kullanım hakkı vermez.
 - Cloudflare, Gemini ve USDA hesap/anahtarları henüz bağlanmadı.
-- RLS tablo/politika kurulumu ve anonim erişim canlı ortamda doğrulandı; iki kimlikli pgTAP testi henüz canlı PostgreSQL üzerinde çalıştırılmadı.
+- RLS tablo/politika kurulumu, anonim erişim ve iki kimlikli pgTAP izolasyon testi canlı ortamda doğrulandı.
 - Canlı dağıtım onayı henüz verilmedi.
 
 ## Sıradaki adımlar
 
-1. Canlı Supabase üzerinde işlemsel iki-kullanıcılı RLS testini çalıştır.
-2. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
-3. Cloudflare projesini bağla ve ön izleme dağıtımında uçtan uca testleri yap.
-4. Kaynak kod lisansını seç.
-5. Ürün sahibinden canlı dağıtım onayı al.
+1. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
+2. Cloudflare projesini bağla ve ön izleme dağıtımında uçtan uca testleri yap.
+3. Kaynak kod lisansını seç.
+4. Ürün sahibinden canlı dağıtım onayı al.
 
 ## Sorunlar
 
