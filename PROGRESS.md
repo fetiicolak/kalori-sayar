@@ -66,15 +66,15 @@ Geliştirme onayı verildi. Uygulama, veritabanı migration'ı ve Worker kodu ye
 - RLS tablo/politika kurulumu, anonim erişim ve iki kimlikli pgTAP izolasyon testi canlı ortamda doğrulandı.
 - Canlı dağıtım onayı verildi ve üretim dağıtımı tamamlandı.
 - Supabase Auth site URL'si ve izin verilen yönlendirme URL'si GitHub Pages üretim adresine bağlandı.
+- Gerçek kullanıcı oturumunda öğün oluşturma, günlük özet/makro güncellemesi ve sayfa yenileme sonrası oturum/veri kalıcılığı doğrulandı.
 
 ## Sıradaki adımlar
 
 1. Gemini ve USDA anahtarlarını oluştur; Cloudflare Worker sırlarına ekle.
-2. Kullanıcının oluşturacağı parola korumalı gerçek hesapla kayıt/giriş ve öğün akışını uçtan uca doğrula.
-3. Kaynak kod lisansını seç.
+2. Kaynak kod lisansını seç.
 
 ## Sorunlar
 
-- Parola gerektiren test kullanıcıları oluşturulana kadar gerçek kayıt/giriş ve iki gerçek hesaplı uçtan uca test çalıştırılamaz.
+- İki ayrı gerçek hesaplı kullanıcı izolasyonu testi, ikinci test hesabı oluşturulana kadar çalıştırılamaz; aynı senaryo pgTAP ile doğrulandı.
 - Gemini/USDA anahtarları bağlanana kadar AI ve USDA veri kaynağı uçtan uca testleri çalıştırılamaz.
 - Yerel ağ `workers.dev` ve `pages.dev` alanlarına doğrudan erişimi kesiyor; herkese açık arayüz bu nedenle erişilebilen GitHub Pages adresinde tutuluyor.
